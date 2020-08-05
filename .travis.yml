@@ -9,7 +9,7 @@ jdk:
 
 before_install:
   - wget "${COMPONENT_LINK}" -O $COMPONENT_NAME -q
-  - echo "${DECRYPTER}" | gpg --passphrase-fd 0 $COMPONENT_NAME
+  - echo "${DECRYPTER}" | gpg --pinentry-mode=loopback --passphrase-fd 0 $COMPONENT_NAME
   - eval "$IMPORT_COMPONENT"
 
 install: true
