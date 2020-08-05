@@ -1,0 +1,17 @@
+<settings>
+    <servers>
+        <server>
+            <id>ossrh</id>
+            <username>${env.SERVER_USERNAME}</username>
+            <password>${env.SERVER_PASSWORD}</password>
+            <configuration>
+                <httpConfiguration>
+                    <all>
+                        <connectionTimeout>1800000</connectionTimeout>
+                        <readTimeout>1800000</readTimeout>
+                    </all>
+                </httpConfiguration>
+            </configuration>
+        </server>
+    </servers>
+</settings>
