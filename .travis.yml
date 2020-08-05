@@ -1,7 +1,3 @@
-sudo: false
-# use Ubuntu 14.04 (Trusty) image, it contains the latest JDK
-dist: trusty
-
 before_install:
   # start X-server for GUI tests (xvfb)
   - "export DISPLAY=:99.0"
