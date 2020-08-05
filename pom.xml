@@ -3,11 +3,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>de.saring</groupId>
-    <artifactId>st-parent</artifactId>
-    <packaging>pom</packaging>
-    <name>st-parent</name>
+    <groupId>org.danilopianini</groupId>
+    <artifactId>de.saring.st-parent</artifactId>
     <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>SportsTracker Parent</name>
+    <description>Parent project of SportsTracker components.</description>
+    <url>https://github.com/ssaring/sportstracker</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Stefan Saring</name>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/DanySK/sportstracker.git</connection>
+        <developerConnection>scm:git:ssh://github.com:DanySK/sportstracker.git</developerConnection>
+        <url>https://github.com/DanySK/sportstracker</url>
+    </scm>
 
     <organization>
         <name>Saring</name>
@@ -91,6 +109,17 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -222,10 +251,4 @@
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

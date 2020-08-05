@@ -15,7 +15,8 @@ before_install:
 install: true
 
 script:
-  - mvn verify
+  - travis_retry mvn verify
+  - travis_retry travis_wait mvn deploy --settings settings.xml
 
 notifications:
   email:

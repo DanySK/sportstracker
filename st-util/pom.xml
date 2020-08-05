@@ -2,14 +2,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>st-util</artifactId>
-    <name>st-util</name>
-    <version>7.7.1-SNAPSHOT</version>
+    <artifactId>de.saring.st-util</artifactId>
+    <version>7.7.1</version>
     <packaging>jar</packaging>
+    <name>SportsTracker Utilities</name>
+    <description>Utilities for the SportsTracker components.</description>
 
     <parent>
-        <groupId>de.saring</groupId>
-        <artifactId>st-parent</artifactId>
+        <groupId>org.danilopianini</groupId>
+        <artifactId>de.saring.st-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
