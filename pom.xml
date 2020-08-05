@@ -26,17 +26,7 @@
     <modules>
         <module>leafletmap</module>
         <module>st-util</module>
-        <module>st-exerciseviewer</module>
-        <module>sportstracker</module>
     </modules>
-
-    <repositories>
-        <!-- Own repository for libraries missing in Maven central repo (e.g. Garmin FIT) --> 
-        <repository>
-            <id>SportsTracker repository</id>
-            <url>https://saring.de/st-maven-repo/</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
