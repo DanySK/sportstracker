@@ -1,2 +1,16 @@
 #!/bin/sh
+set -e
 sudo apt-get install xvfb
+MVN_ORIGINAL_LOCATION="$(which mvn)"
+MVN_INSTALL_FOLDER="${MVN_ORIGINAL_LOCATION%/*}"
+NEW_MVN_LOCATION="${MVN_INSTALL_FOLDER}/mvn_original"
+echo Moving "$MVN_ORIGINAL_LOCATION" to "$NEW_MVN_LOCATION"
+sudo mv "$MVN_ORIGINAL_LOCATION" "$NEW_MVN_LOCATION"
+echo "Seeding $MVN_ORIGINAL_LOCATION"
+sudo echo '#!/bin/sh' > "$MVN_ORIGINAL_LOCATION"
+ALL_ARGS='$@'
+sudo echo "xvfb-run --auto-servernum $NEW_MVN_LOCATION \"$ALL_ARGS\"" >> "$MVN_ORIGINAL_LOCATION"
+echo Making the script executable
+sudo chmod +x "$MVN_ORIGINAL_LOCATION"
+echo Created:
+cat "$MVN_ORIGINAL_LOCATION"
