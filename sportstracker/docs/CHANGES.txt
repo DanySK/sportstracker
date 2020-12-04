@@ -13,22 +13,30 @@ v7.7.1:
    - not shown when there is no equipment list for the selected sport type
  - SQLite Export: column DATE_TIME in table EXERCISE is now of type Integer,
    the previous type Text has caused problems in queries (e.g. sorting)
- - updated to JavaFX / OpenJFX 14
+ - updated to JavaFX / OpenJFX 15
    - provides improved macOS 10.15 support and several bufixes
- - updated Kotlin to version 1.3.70
+ - updated ControlsFX to version 11.0.2
+ - updated Kotlin to version 1.4.10
  - updated packaging of native installer creation for macOS, Windows and Linux
    - now uses jpackage introduced with JDK 14 (JEP 343)
    - jpackager-backports and workarounds are not needed anymore
    - created packages are smaller now
+ - Statistics Dialog: improved naming for Totals, Minimums, Averages, Maximums
+   - singular naming leads to misunderstandings (GitHub Issue #231)
  ExerciseViewer changes:
  - updated Garmin FIT SDK library to version 21.20.00, provides bugfixes
    and support for newer Garmin devices
  - updated Leaflet to version 1.6.0, provides various fixes and performance
    improvements (contributed by Thomas Feuster, PR #219)
-- Bugfix for reading exercise files from Garmin Fenix 6 and 5X devices
-  (Issue #220: Failed to parse exercise file on new Garmin device)
-- Garmin FIT parser: improved lookup of the device / product name
-  - added the firmware software version to the device name
+ - Bugfix for reading exercise files from Garmin Fenix 6 and 5X devices
+   (Issue #220: Failed to parse exercise file on new Garmin device)
+ - Garmin FIT parser: improved lookup of the device / product name
+   - added the firmware software version to the device name
+   - Issue #234: added support for FIT files from Suunto Spartan watches
+     (tested with model Suunto Spartan Sport Wrist HR Baro)
+ - TopoGrafixGpxParser: bugfix for issue #233
+   - added support for heartrate data in GPX files from GatdetBridge
+     (Android Bridge App, https://gadgetbridge.org/ )
 
 v7.7.0:
  SportsTracker changes:

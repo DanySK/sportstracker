@@ -140,6 +140,10 @@ class TopoGrafixGpxParser : AbstractExerciseParser() {
                     if (strHeartrate == null) {
                         strHeartrate = eTrkPt.getChild("extensions", namespace)?.getChildText("bpm", namespace)
                     }
+                    // if not present, try to get heartrate in GatdetBridge format if present (Android Bridge App)
+                    if (strHeartrate == null) {
+                        strHeartrate = eTrkPt.getChild("extensions", namespace)?.getChildText("hr", namespace)
+                    }
 
                     if (strHeartrate != null) {
                         exercise.recordingMode.isHeartRate = true
@@ -268,7 +272,7 @@ class TopoGrafixGpxParser : AbstractExerciseParser() {
 
             val speedMax = exercise.sampleList
                     .map { it.speed!! }
-                    .max()!!
+                    .maxOrNull()!!
 
             val lastSample = exercise.sampleList[exercise.sampleList.size - 1]
             val distance = lastSample.distance!!
@@ -289,7 +293,7 @@ class TopoGrafixGpxParser : AbstractExerciseParser() {
 
         if (!sampleHeartrates.isEmpty()) {
             exercise.heartRateAVG = sampleHeartrates.average().roundToInt().toShort()
-            exercise.heartRateMax = sampleHeartrates.max()
+            exercise.heartRateMax = sampleHeartrates.maxOrNull()
         }
     }
 

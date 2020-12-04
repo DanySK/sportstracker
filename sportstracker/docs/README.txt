@@ -51,6 +51,7 @@ monitors might work too, but I can't test them, user feedback is welcome):
   - Timex Ironmen Run Trainer (tested)
   - Timex Ironman Global Trainer  (tested)
   - Suunto Ambit       (tested with Ambit2, downloaded GPX files)
+  - Suunto Spartan     (tested with Spartan Sport Wrist HR Baro, FIT files)
   - Oregon Scientific SmartSync WM100 (tested)
   - HOLUX FunTrek      (tested with FunTrek 130, GPX files)
   - Some Sony Ericsson mobiles (tested with W580i)
@@ -410,16 +411,16 @@ All user interfaces are defined in FXML by using the JavaFX Scene Builder 9.x.
 
 The SportsTracker project uses the following libraries:
 
-  - OpenJFX 14 (https://openjfx.io/)
+  - OpenJFX 15 (https://openjfx.io/)
       License: GPL v2 + Classpath Exception
   - EasyDI 0.3.0 (https://github.com/lestard/EasyDI)
       Includes: javax.inject-1.jar
       License: Apache License v2.0
-  - Kotlin 1.3.70 (http://kotlinlang.org/)
+  - Kotlin 1.4.10 (http://kotlinlang.org/)
       License: Apache License v2.0
   - JDOM 2.0.6 (http://www.jdom.org)
       License: Apache-style open source license
-  - ControlsFX 11.0.0 (http://controlsfx.org/)
+  - ControlsFX 11.0.2 (http://controlsfx.org/)
       License: BSD 3-Clause License
   - JFreeChart 1.5.0 and JFreeChart-FX 1.0.1 (http://www.jfree.org/)
       License: Lesser General Public License (LGPL)
